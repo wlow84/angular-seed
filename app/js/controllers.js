@@ -1,12 +1,25 @@
 'use strict';
 
 /* Controllers */
-
-
-function MyCtrl1() {}
-MyCtrl1.$inject = [];
-
-
-function MyCtrl2() {
+function MusicCtrl($scope){
+  $scope.hello = "hello world!";
+  $scope.url = "partials/navigation.html";
 }
-MyCtrl2.$inject = [];
+
+function KarateCtrl($scope){
+ $scope.url = "partials/navigation.html";
+}
+
+function GalleryCtrl($scope){
+  $scope.url = "partials/navigation.html";
+}
+
+function AboutCtrl($scope){
+  $scope.url = "partials/navigation.html";
+}
+
+function SupportCtrl($scope){
+  $scope.url = "partials/navigation.html";
+}
+
+//MyCtrl2.$inject = [];
