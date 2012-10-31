@@ -1,2 +1,14 @@
 /* app css stylesheet */
 
+.background-pic{
+  top:0;
+  left:0;
+  height:auto;
+  overflow-x:hidden;
+  position:fixed;
+  z-index:-1;
+}
+
+.music-alignment{
+  height:120px;
+}
