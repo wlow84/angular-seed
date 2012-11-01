@@ -12,9 +12,13 @@ function KarateCtrl($scope){
  $scope.karateNav = "active";
 }
 
-function GalleryCtrl($scope){
+function GalleryCtrl($scope, $http){
   $scope.url = "partials/navigation.html";
   $scope.galleryNav = "active";
+
+  $http.get('img/seijo-model/photos.json').success(function(data) {
+    $scope.images = data;
+  });
 }
 
 function AboutCtrl($scope){

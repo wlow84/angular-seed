@@ -1,2 +1,7 @@
 <div ng-include src="url"></div>
-gallery partial
+
+<div id="container">
+  <div ng-repeat="image in images" class="image-box" masonry>
+    <img ng-src="img/seijo-model/{{image.filename}}" class="image-portrait"/>
+  </div>
+</div>

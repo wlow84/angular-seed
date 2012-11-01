@@ -3,8 +3,8 @@
 
 // Declare app level module which depends on filters, and services
 angular.module('myApp',
-                ['myApp.filters', 'myApp.services', 'myApp.directives']).
-  config(['$routeProvider', function($routeProvider) {
+                ['myApp.filters', 'myApp.services', 'myApp.directives'])
+       .config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/Music',
       {templateUrl: 'partials/music.html', controller: MusicCtrl});
     $routeProvider.when('/Karate',
@@ -16,4 +16,21 @@ angular.module('myApp',
     $routeProvider.when('/Support',
       {templateUrl: 'partials/support.html', controller: SupportCtrl});
     $routeProvider.otherwise({redirectTo: '/Music'});
-  }]);
+  }])
+  .directive('masonry',function(){
+      return function(){
+        function fit(){
+          var $container = $('#container');
+
+          $container.imagesLoaded( function(){
+            $container.masonry({
+              itemSelector : '.image-box',
+              columnWidth:320
+            });
+          });
+        }
+
+        fit();
+      }
+  });
+

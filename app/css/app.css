@@ -1,5 +1,7 @@
 /* app css stylesheet */
-
+body{
+  background-color:#f1f1f1;
+}
 .background-pic{
   top:0;
   left:0;
@@ -11,4 +13,23 @@
 
 .music-alignment{
   height:120px;
+}
+
+.image-box{
+  margin: 5px;
+  padding: 5px;
+  background: #D8D5D2;
+  font-size: 11px;
+  line-height: 1.4em;
+  float: left;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  max-width: 300px;
+}
+
+#container{
+  width:1280px;
+  margin-left:auto;
+  margin-right:auto;
 }
