@@ -13,12 +13,18 @@ function KarateCtrl($scope){
 }
 
 function GalleryCtrl($scope, $http){
+  $scope.imageUrl = 'img/seijo-model/001.jpg';
   $scope.url = "partials/navigation.html";
   $scope.galleryNav = "active";
+  $scope.replaceModalImage = function(fileName){
+    $scope.imageUrl = 'img/seijo-model/' + fileName;
+  };
 
   $http.get('img/seijo-model/photos.json').success(function(data) {
     $scope.images = data;
   });
+
+
 }
 
 function AboutCtrl($scope){

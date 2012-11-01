@@ -26,10 +26,34 @@ body{
   -moz-border-radius: 5px;
   border-radius: 5px;
   max-width: 300px;
+  cursor:pointer;
+}
+
+.image-box:hover .actions{
+  display:block;
+}
+
+.actions{
+  display:none;
+  position: absolute;
+  width: 290px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.actions .btn{
+  margin-left: 2px;
+  margin-right: 2px;
 }
 
 #container{
   width:1280px;
   margin-left:auto;
   margin-right:auto;
+}
+
+/*bootstrp overrides*/
+.modal-body{
+  text-align: center;
 }

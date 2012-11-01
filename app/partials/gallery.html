@@ -1,7 +1,43 @@
 <div ng-include src="url"></div>
-
 <div id="container">
-  <div ng-repeat="image in images" class="image-box" masonry>
-    <img ng-src="img/seijo-model/{{image.filename}}" class="image-portrait"/>
+  <div  ng-repeat="image in images"
+        class="image-box" masonry
+        onclick="$('#seijo-image-modal').modal('show')"
+        ng-click='replaceModalImage(image.filename)'
+  >
+    <div class="actions">
+      <a href="#" class="btn btn-mini pull-left">
+        <i class="icon-heart"></i>
+        Like
+      </a>
+      <a href="#" class="btn btn-mini pull-left">
+        <i class="icon-retweet"></i>
+        Re-Tweet
+      </a>
+
+      <a href="#" class="btn btn-mini pull-right">
+        <i class="icon-comment"></i>
+        Comment
+      </a>
+    </div>
+    <img ng-src="img/seijo-model/{{image.filename}}" class="image-portrait"
+         />
+  </div>
+</div>
+
+
+<!-- Modal -->
+<div  id="seijo-image-modal" class="modal hide fade"
+      tabindex="-1" role="dialog"
+      aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">
+      <img src="img/budozen.jpeg" style="width:40px">
+      Seijo Imazaki
+    </h3>
+  </div>
+  <div class="modal-body">
+    <img ng-src="{{imageUrl}}"/>
   </div>
 </div>
