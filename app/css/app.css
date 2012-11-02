@@ -53,7 +53,25 @@ body{
   margin-right:auto;
 }
 
+#myCarousel{
+  text-align: center;
+  height:362px;
+}
+
+.carousel-caption{
+  height: 30px;
+  overflow: hidden;
+}
+
 /*bootstrp overrides*/
 .modal-body{
   text-align: center;
+}
+
+#seijo-video-modal{
+  width:680px;
+}
+
+.video-thumbnail{
+  width:288px;
 }

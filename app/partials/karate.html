@@ -1,2 +1,30 @@
 <div ng-include src="url"></div>
-karate partials
+<div id="container">
+  <div  ng-repeat="video in videos"
+        class="image-box" masonry
+        onclick="$('#seijo-video-modal').modal('show')"
+        ng-click='replaceModalVideo(getVideoId(video.id.$t),video.title.$t)'
+  >
+    <img ng-src="http://img.youtube.com/vi/{{getVideoId(video.id.$t)}}/mqdefault.jpg" class="video-thumbnail"/>
+
+    <div class="carousel-caption">
+      <h4>{{video.title.$t}}</h4>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div  id="seijo-video-modal" class="modal hide fade"
+      tabindex="-1" role="dialog"
+      aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">
+      <img src="img/budozen.jpeg" style="width:40px">
+      {{selectedVideoTitle}}
+    </h3>
+  </div>
+  <div class="modal-body">
+   <iframe width="640" height="360" src="http://www.youtube.com/embed/{{selectedVideo}}?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
