@@ -1,27 +1,15 @@
 <div ng-include src="url"></div>
 <div id="container">
   <div  ng-repeat="image in images"
-        class="image-box" masonry
-        onclick="$('#seijo-image-modal').modal('show')"
-        ng-click='replaceModalImage(image.filename)'
-  >
+        class="image-box" masonry>
     <div class="actions">
-      <a href="#" class="btn btn-mini pull-left">
-        <i class="icon-heart"></i>
-        Like
-      </a>
-      <a href="#" class="btn btn-mini pull-left">
-        <i class="icon-retweet"></i>
-        Re-Tweet
-      </a>
+      <a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fwww.seijoimazaki.com&media=http%3A%2F%2Fwww.seijoimazaki.com%2Fapp%2Fimg%2Fseijo-model%2F{{image.filename}}" class="pin-it-button" count-layout="horizontal"><img border="0" src="//assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
 
-      <a href="#" class="btn btn-mini pull-right">
-        <i class="icon-comment"></i>
-        Comment
-      </a>
+      <div class="fb-like pull-right" data-href="http://www.seijoimazaki.com/img/seijo-model/{{image.filename}}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false"></div>
     </div>
     <img ng-src="img/seijo-model/{{image.filename}}" class="image-portrait"
-         />
+        onclick="$('#seijo-image-modal').modal('show')"
+        ng-click='replaceModalImage(image.filename)' />
   </div>
 </div>
 
