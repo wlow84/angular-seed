@@ -8,18 +8,31 @@
   </br>
     <p class="pull-right">Seijo Imazaki</p>
   </div>
-
 </div>
-<div id="container" >
-  <div  ng-repeat="product in products"
-        class="image-box" style="margin:0;padding:0;" masonry>
-    <a href="{{product.short_url}}">
-      <img src="img/budozen.jpeg" alt="budozen">
-      <div class="carousel-caption">
-          <h4>{{product.name}}</h4>
-      </div>
-    </a>
-    <h2 class="link-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" data-default-offset="20" style="top: 20px; "><strong id="price" itemprop="price" class="contentEditable">${{product.price/100}}</strong></h2>
+<div class="row">
+  <div class="offset3 span5">
+    <img src="img/budozen.jpeg" alt="budozen">
+  </div>
+  <div class="span6">
+    <table class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Song Title</th>
+          <th>Price</th>
+          <th>Download</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="product in products">
+            <td>{{$index+1}}</td>
+            <td><a href="{{product.short_url}}">{{product.name}}</a></td>
+            <td>${{product.price/100}}</td>
+            <td class="toCenter"><a href="{{product.short_url}}" class="btn btn-primary btn-mini">
+              <i class="icon-hand-up icon-white"></i>
+              Buy Mp3</a></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
-
