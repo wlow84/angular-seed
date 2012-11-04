@@ -1,2 +1,25 @@
 <div ng-include src="url"></div>
-support
+
+<div class="row" >
+  <div class="span10 offset3 hero-unit">
+    Making music is my life. If you like what
+    you hear please support me by buying some of
+    my music. Your support helps me keep doing what I love. If not just shoot me an email or like my page on facebook.
+  </br>
+    <p class="pull-right">Seijo Imazaki</p>
+  </div>
+
+</div>
+<div id="container" >
+  <div  ng-repeat="product in products"
+        class="image-box" style="margin:0;padding:0;" masonry>
+    <a href="{{product.short_url}}">
+      <img src="img/budozen.jpeg" alt="budozen">
+      <div class="carousel-caption">
+          <h4>{{product.name}}</h4>
+      </div>
+    </a>
+    <h2 class="link-price" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer" data-default-offset="20" style="top: 20px; "><strong id="price" itemprop="price" class="contentEditable">${{product.price/100}}</strong></h2>
+  </div>
+</div>
+

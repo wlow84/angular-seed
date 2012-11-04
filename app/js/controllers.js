@@ -47,9 +47,12 @@ function AboutCtrl($scope){
   $scope.aboutNav = "active";
 }
 
-function SupportCtrl($scope){
+function SupportCtrl($scope,$http){
   $scope.url = "partials/navigation.html";
   $scope.supportNav = "active";
+  $http.get('product/product.json').success(function(data){
+    $scope.products = data;
+  })
 }
 
 //MyCtrl2.$inject = [];
